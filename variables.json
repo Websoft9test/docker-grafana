@@ -1,0 +1,127 @@
+{
+  "name": "template",
+  "trademark": "ONLYOFFICE",
+  "installpath": "/data/wwwroot/onlyoffice",
+  "compose_file": "docker-compose-production.yml",
+  "env_file": ".env_all",
+  "requirements":{
+    "cpu_arch": "Linux x86-64, ARM 32/64, Windows x86-64, IBM POWER8, x86/i686",
+    "cpu": "2",
+    "memory": "4",
+    "disk": "20",
+    "swap": "2",
+    "url": "https://github.com/onlyoffice/docker#recommended-system-requirements"
+  },
+
+  "user": {
+    "username": "admin",
+    "password": "123456"
+  },
+
+  "services":[
+    {
+      "name": "onlyoffice-server",
+      "port": "9002",
+      "description_cn": "浏览器访问 ONLYOFFICE",
+      "description_en": "Web-GUI database management tool",
+      "required": "Y"
+    },
+
+    {
+      "name": "phpmyadmin",
+      "port": "9090",
+      "description_cn": "数据库可视化管理工具",
+      "description_en": "Web-GUI database management tool",
+      "required": "Y"
+    }
+  ],
+
+  "command_comments":[
+    {
+      "comment_cn": ".env文件的SITE_NAME需要修改成公网IP或者域名才能被外网访问",
+      "comment_en": ".env file's [SITE_NAME] should  be changed to public IP or domain name to be accessed by Internet"
+    },
+    {
+      "comment_cn": "默认启动的是ERPNext12，如果您想运行ERPNext13,只需将ERPNEXT_VERSION、FRAPPE_VERSION修改成v13",
+      "comment_en": "The default startup is erpnext12. If you want to run erpnext13, you only need to change ERPNEXT_VERSION/FRAPPE_VERSIO to V13"
+    }
+  ],
+
+  "command_extra":[
+    {
+      "cmd": "echo aaa"
+    },
+    {
+      "cmd": "echo bbb"
+    }
+  ],
+
+  
+  "catalog":
+    {
+      "directory": ".git",
+      "files":[
+        {
+          "file": ".github/ISSUE_TEMPLATE/bug_report.md"
+        },
+        {
+          "file": ".git/ISSUE_TEMPLATE/documentation_report.md"
+        },
+        {
+          "file": ".git/ISSUE_TEMPLATE/feature_request.md"
+        },
+        {
+          "file": ".git/workflows/mirror.yml"
+        },
+        {
+          "file": ".git/workflows/sync_source.yml"
+        },
+        {
+          "file": ".git/workflows/templating.yml"
+        },
+        {
+          "file": ".git/workflows/use.md"
+        },
+        {
+          "file": "CHANGELOG.md"
+        },
+        {
+          "file": "LICENSE.md"
+        },
+        {
+          "file": "README.md"
+        },
+        {
+          "file": "README-zh.md"
+        },
+        {
+          "file": "Notes.md"
+        },
+        {
+          "file": "docker-compose-production.yml"
+        },
+        {
+          "file": "variables.json"
+        }
+      ]
+    },
+
+
+  "faqs": [
+    {
+      "question_cn": "问题1",
+      "answer_cn": "答案1",
+      "question_en": "question1",
+      "answer_en": "answer1"
+    },
+
+    {
+      "question_cn": "问题2",
+      "answer_cn": "答案2",
+      "question_en": "question2",
+      "answer_en": "answer2"
+    }
+
+  ]
+
+}
