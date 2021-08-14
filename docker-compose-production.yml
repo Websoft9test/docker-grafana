@@ -18,6 +18,7 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
       - grafana_config:/etc/grafana
+      - grafana_logs:/var/log/grafana
       # if you want to bind mount below, run command `chown -R grafana volumes/grafana`
       #- ./volumes/grafana/logs:/var/log/grafana
     environment:
@@ -54,3 +55,4 @@ networks:
 volumes:
   grafana_data:
   grafana_config:
+  grafana_logs:
