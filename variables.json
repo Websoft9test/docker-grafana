@@ -3,7 +3,7 @@
   "trademark": "Grafana",
   "installpath": "/data/apps/grafana",
   "compose_file": "docker-compose.yml",
-  "env_file": ".env_all",
+  "env_file": ".env",
   "requirements":{
     "cpu_arch": "Linux x86-64, ARM 32/64, x86/i686",
     "cpu": "1",
